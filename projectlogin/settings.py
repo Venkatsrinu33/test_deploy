@@ -23,9 +23,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'u3y*id*1$=(n3gt3=+41t_ufbjas*%p6g!qp$27mi^^d4^u4_^'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['13.235.115.57']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -77,12 +77,8 @@ WSGI_APPLICATION = 'projectlogin.wsgi.application'
 
 DATABASES ={
 'default':{
-'ENGINE': 'django.db.backends.postgresql_psycopg2',
-'NAME':os.environ['RDS_DB_NAME'],
-'USER':os.environ['RDS_USERNAME'],
-'PASSWORD':os.environ['RDS_PASSWORD'],
-'HOST':os.environ['RDS_HOSTNAME'],
-'PORT':os.environ['RDS_PORT'],
+'ENGINE': 'django.db.backends.sqlite3',
+'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
 }
 }
 

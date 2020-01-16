@@ -13,7 +13,7 @@ def home(request):
 
 
 def reg(request):
-    return render(request,'reg.html')
+    return render(request, 'reg1.html')
 
 
 def Register(request):
@@ -38,7 +38,7 @@ def Register(request):
             my.save()
             return render(request,'success.html')
         else:
-            return render(request, 'reg.html')
+            return render(request, 'reg1.html')
     except Exception as e:
         return HttpResponse(str(e))
 
