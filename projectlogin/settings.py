@@ -25,7 +25,7 @@ SECRET_KEY = 'u3y*id*1$=(n3gt3=+41t_ufbjas*%p6g!qp$27mi^^d4^u4_^'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['13.235.115.57']
+ALLOWED_HOSTS = ['13.233.115.239']
 
 
 # Application definition
@@ -78,11 +78,10 @@ WSGI_APPLICATION = 'projectlogin.wsgi.application'
 DATABASES ={
 'default':{
 'ENGINE': 'django.db.backends.postgresql_psycopg2',
-'NAME':os.environ['RDS_DB_NAME'],
-'USER':os.environ['RDS_USERNAME'],
-'PASSWORD':os.environ['RDS_PASSWORD'],
-'HOST':os.environ['RDS_HOSTNAME'],
-'PORT':os.environ['RDS_PORT'],
+'NAME':'srinu',
+'USER':'test_deploy',
+'PASSWORD':'Srinivas33@',
+'HOST':'database-test.chijsxtrowu5.ap-south-1.rds.amazonaws.com'
 }
 }
 
