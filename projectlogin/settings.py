@@ -76,8 +76,8 @@ DATABASES ={
 'default':{
 'ENGINE': 'django.db.backends.postgresql_psycopg2',
 'NAME':'srinu',
-'USER':'test_deploy',
-'PASSWORD':'Srinivas33@',
+'USER':'database_test',
+'PASSWORD':'Srinivas33',
 'HOST':'database-test.chijsxtrowu5.ap-south-1.rds.amazonaws.com'
 }
 }
