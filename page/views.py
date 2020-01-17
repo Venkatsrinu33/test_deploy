@@ -1,7 +1,7 @@
 
 from django.contrib.auth import logout
 from django.http import HttpResponse
-from django.shortcuts import render, redirect
+from django.shortcuts import render
 from .models import userdata
 import datetime
 
@@ -13,7 +13,7 @@ def home(request):
 
 
 def reg(request):
-    return render(request,'reg.html')
+    return render(request, 'reg.html')
 
 
 def Register(request):
@@ -25,7 +25,6 @@ def Register(request):
     for item in sr:
         print(item.username)
         return HttpResponse('username exits')
-
     try:
         name = request.POST['t2']
         phoneno = int(request.POST['t3'])
@@ -38,9 +37,11 @@ def Register(request):
             my.save()
             return render(request,'success.html')
         else:
-            return render(request, 'reg.html')
-    except Exception as e:
-        return HttpResponse(str(e))
+            return HttpResponse('enter valid data')
+    except:
+        data = {'message': 'please provide correct data'}
+        print(data)
+        return render(request, 'error.html', context=data)
 
 
 def login(request):
@@ -50,14 +51,15 @@ def login(request):
         if userdata.objects.filter(username=username,password=password):
             return render(request,'post.html')
         else:
-            return HttpResponse('invalid password')
-    except Exception as e:
-        return HttpResponse(str(e))
-
+            return render(request,'loginfail.html')
+    except:
+        data={'message':'enter username/password'}
+        print(data)
+        return render(request,'error.html',context=data)
 
 def logo(request):
     logout(request)
-    return HttpResponse('loggout success')
+    return HttpResponse('logout success')
 
 
 

@@ -1,18 +1,54 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Home</title>
-</head>
-<body>
-<form action="login" method="post">
+
+<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+<style>
+body {
+    color:green;
+    font-family: arial, serif;
+    font-size:1.2em;
+}
+form {
+    margin:0 auto;
+    padding:100px;
+    align:centre;
+}
+.help-block {
+    font-size: 10px;
+}
+label, input {
+    flex-basis:80px;
+}
+</style>
+<form class="User login" action="login" method="POST">
     {% csrf_token %}
-
-    <h1>USERNAME : <input type="text" name="t7"></h1><br>
-    <h2>PASSWORD : <input type="text" name="t8"></h2><br>
-    <input type="submit" value="Login">
+          <fieldset>
+            <div id="legend">
+              <legend class="">User Login</legend>
+            </div>
+            <div class="control-group">
+              <!-- Username -->
+              <label class="control-label"  for="username">Username</label>
+              <div class="controls">
+                <input type="text" id="username" name="t7" placeholder="" class="input-xlarge">
+                <p  class="help-block">Username can contain any letters or numbers, without spaces</p>
+              </div>
+            </div>
+            <div class="control-group">
+              <!-- Password-->
+              <label class="control-label" for="password">Password</label>
+              <div class="controls">
+                <input type="password" id="password" name="t8" placeholder="" class="input-xlarge">
+                <p class="help-block">Password should be at least 4 characters</p>
+              </div>
+            </div>
+            <div class="control-group">
+              <!-- Button -->
+              <div class="controls">
+                <button class="btn btn-success">login</button>
+              </div>
+            </div>
+          </fieldset>
+    <a href="reg"> click here to Register</a>
 </form>
-<a href="reg"> click here to Register</a>
-
-</body>
-</html>

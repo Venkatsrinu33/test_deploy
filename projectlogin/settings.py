@@ -24,10 +24,7 @@ SECRET_KEY = 'u3y*id*1$=(n3gt3=+41t_ufbjas*%p6g!qp$27mi^^d4^u4_^'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
-
 ALLOWED_HOSTS = ['13.233.115.239']
-
-
 # Application definition
 
 INSTALLED_APPS = [

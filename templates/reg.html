@@ -1,21 +1,88 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>user registration</title>
-</head>
-<body>
-<form action="Register" method="post">
+<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+<style>
+body {
+    color:green;
+    font-family: arial;
+    font-size:1.2em;
+}
+form {
+    margin:0 auto;
+    padding:40px;
+}
+.help-block {
+    font-size: 10px;
+}
+label, input {
+    flex-basis:100px;
+}
+</style>
+<form class="User Registration" action="Register" method="POST">
     {% csrf_token %}
-    <h2>Enter name :<input type="text" name="t1"></h2>
-    <h2>Enter username :<input type="text" name="t2"></h2>
-    <h2>Enter Email :<input type="text" name="t4"></h2>
-    <h2>Enter phonenumber :<input type="text" name="t3"></h2>
-    <h2>Enter password :<input type="text" name="t5"></h2>
-    <h2>Enter repassword :<input type="text" name="t6"></h2>
-    <input type="submit" value="register">
+          <fieldset>
+            <div id="legend">
+              <legend class="">Register</legend>
+            </div>
+            <div class="control-group">
+              <!-- Username -->
+              <label class="control-label"  for="username">Username</label>
+              <div class="controls">
+                <input type="text" id="username" name="t2" placeholder="" class="input-xlarge">
+                <p  class="help-block">Username can contain any letters or numbers, without spaces</p>
+              </div>
+            </div>
+              <div class="control-group">
+              <!-- name -->
+              <label class="control-label"  for="name">name</label>
+              <div class="controls">
+                <input type="text" id="name" name="t1" placeholder="" class="input-xlarge">
+                <p class="help-block">name can contain only letters</p>
+              </div>
+            </div>
+              <div class="control-group">
+              <!-- name -->
+              <label class="control-label"  for="phoneno">phonenumber</label>
+              <div class="controls">
+                <input type="text" id="name" name="t3" placeholder="" class="input-xlarge">
+                <p class="help-block">name can contain only letters</p>
+              </div>
+            </div>
 
+            <div class="control-group">
+              <!-- E-mail -->
+              <label class="control-label" for="email">E-mail</label>
+              <div class="controls">
+                <input type="text" id="email" name="t4" placeholder="" class="input-xlarge">
+                <p class="help-block">Please provide your E-mail</p>
+              </div>
+            </div>
+
+            <div class="control-group">
+              <!-- Password-->
+              <label class="control-label" for="password">Password</label>
+              <div class="controls">
+                <input type="password" id="password" name="t5" placeholder="" class="input-xlarge">
+                <p class="help-block">Password should be at least 4 characters</p>
+              </div>
+            </div>
+
+            <div class="control-group">
+              <!-- Password -->
+              <label class="control-label"  for="password_confirm">Password (Confirm)</label>
+              <div class="controls">
+                <input type="password" id="password_confirm" name="t6" placeholder="" class="input-xlarge">
+                <p class="help-block">Please confirm password</p>
+              </div>
+            </div>
+
+            <div class="control-group">
+              <!-- Button -->
+              <div class="controls">
+                <button class="btn btn-success">Register</button>
+              </div>
+            </div>
+          </fieldset>
 </form>
-
-</body>
-</html>
+</div>
